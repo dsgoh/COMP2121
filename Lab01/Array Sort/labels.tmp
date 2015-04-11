@@ -1,0 +1,32 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.1.42</VERSION>
+ <DEVICE>ATmega2560</DEVICE>
+ <WORKING_DIR>Z:\Users\angusyuen\Desktop\University\COMP2121\Lab01\Array Sort</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:\Program Files\Atmel\AVR Tools\AvrAssembler2\Appnotes</DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>Z:\Users\angusyuen\Desktop\University\COMP2121\Lab01\Array Sort\Array_Sort.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:\Program Files\Atmel\AVR Tools\AvrAssembler2\Appnotes\m2560def.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>Z:\Users\angusyuen\Desktop\University\COMP2121\Lab01\Array Sort\Array_Sort.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>Z:\Users\angusyuen\Desktop\University\COMP2121\Lab01\Array Sort\Array_Sort.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>Z:\Users\angusyuen\Desktop\University\COMP2121\Lab01\Array Sort\Array_Sort.map</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <memory><FILE>Z:\Users\angusyuen\Desktop\University\COMP2121\Lab01\Array Sort\Array_Sort.asm</FILE><LINE>9</LINE></memory>
+  <array><FILE>Z:\Users\angusyuen\Desktop\University\COMP2121\Lab01\Array Sort\Array_Sort.asm</FILE><LINE>12</LINE></array>
+  <start><FILE>Z:\Users\angusyuen\Desktop\University\COMP2121\Lab01\Array Sort\Array_Sort.asm</FILE><LINE>14</LINE></start>
+  <load><FILE>Z:\Users\angusyuen\Desktop\University\COMP2121\Lab01\Array Sort\Array_Sort.asm</FILE><LINE>20</LINE></load>
+  <init><FILE>Z:\Users\angusyuen\Desktop\University\COMP2121\Lab01\Array Sort\Array_Sort.asm</FILE><LINE>28</LINE></init>
+  <sort><FILE>Z:\Users\angusyuen\Desktop\University\COMP2121\Lab01\Array Sort\Array_Sort.asm</FILE><LINE>40</LINE></sort>
+  <end><FILE>Z:\Users\angusyuen\Desktop\University\COMP2121\Lab01\Array Sort\Array_Sort.asm</FILE><LINE>71</LINE></end>
+  <iterationEnd><FILE>Z:\Users\angusyuen\Desktop\University\COMP2121\Lab01\Array Sort\Array_Sort.asm</FILE><LINE>59</LINE></iterationEnd>
+  <step><FILE>Z:\Users\angusyuen\Desktop\University\COMP2121\Lab01\Array Sort\Array_Sort.asm</FILE><LINE>54</LINE></step>
+ </LABELS>
+</ASSEMBLER_INFO>

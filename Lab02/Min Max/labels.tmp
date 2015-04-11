@@ -1,0 +1,36 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.1.42</VERSION>
+ <DEVICE>ATmega2560</DEVICE>
+ <WORKING_DIR>C:\Users\Angus\AppData\Local\Temp</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:\Program Files (x86)\Atmel\AVR Tools\AvrAssembler2\Appnotes</DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>\\psf\Home\Desktop\University\COMP2121\Lab02\Min Max\MinMax.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:\Program Files (x86)\Atmel\AVR Tools\AvrAssembler2\Appnotes\m2560def.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>\\psf\Home\Desktop\University\COMP2121\Lab02\Min Max\MinMax.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>\\psf\Home\Desktop\University\COMP2121\Lab02\Min Max\MinMax.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>\\psf\Home\Desktop\University\COMP2121\Lab02\Min Max\MinMax.map</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <main><FILE>\\psf\Home\Desktop\University\COMP2121\Lab02\Min Max\MinMax.asm</FILE><LINE>26</LINE></main>
+  <findLargest><FILE>\\psf\Home\Desktop\University\COMP2121\Lab02\Min Max\MinMax.asm</FILE><LINE>41</LINE></findLargest>
+  <end><FILE>\\psf\Home\Desktop\University\COMP2121\Lab02\Min Max\MinMax.asm</FILE><LINE>38</LINE></end>
+  <L3><FILE>\\psf\Home\Desktop\University\COMP2121\Lab02\Min Max\MinMax.asm</FILE><LINE>57</LINE></L3>
+  <isLowest><FILE>\\psf\Home\Desktop\University\COMP2121\Lab02\Min Max\MinMax.asm</FILE><LINE>78</LINE></isLowest>
+  <L6><FILE>\\psf\Home\Desktop\University\COMP2121\Lab02\Min Max\MinMax.asm</FILE><LINE>95</LINE></L6>
+  <epilogue><FILE>\\psf\Home\Desktop\University\COMP2121\Lab02\Min Max\MinMax.asm</FILE><LINE>117</LINE></epilogue>
+  <initLowest><FILE>\\psf\Home\Desktop\University\COMP2121\Lab02\Min Max\MinMax.asm</FILE><LINE>71</LINE></initLowest>
+  <isHighest><FILE>\\psf\Home\Desktop\University\COMP2121\Lab02\Min Max\MinMax.asm</FILE><LINE>85</LINE></isHighest>
+  <loopforever><FILE>\\psf\Home\Desktop\University\COMP2121\Lab02\Min Max\MinMax.asm</FILE><LINE>68</LINE></loopforever>
+  <L5><FILE>\\psf\Home\Desktop\University\COMP2121\Lab02\Min Max\MinMax.asm</FILE><LINE>92</LINE></L5>
+  <checkLargest><FILE>\\psf\Home\Desktop\University\COMP2121\Lab02\Min Max\MinMax.asm</FILE><LINE>105</LINE></checkLargest>
+  <singleElement><FILE>\\psf\Home\Desktop\University\COMP2121\Lab02\Min Max\MinMax.asm</FILE><LINE>110</LINE></singleElement>
+ </LABELS>
+</ASSEMBLER_INFO>

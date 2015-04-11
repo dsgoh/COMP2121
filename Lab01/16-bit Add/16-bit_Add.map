@@ -1,0 +1,12 @@
+
+AVRASM ver. 2.1.42  Z:\Users\angusyuen\Desktop\University\COMP2121\Lab01\16-bit Add\16-bit_Add.asm Tue Mar 24 17:17:20 2015
+
+
+DEF  a_high       r17
+DEF  a_low        r16
+DEF  b_high       r19
+DEF  b_low        r18
+DEF  sum_high     r21
+DEF  sum_low      r20
+CSEG main         00000006
+CSEG end          0000000b

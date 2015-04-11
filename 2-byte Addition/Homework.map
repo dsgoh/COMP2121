@@ -1,0 +1,11 @@
+
+AVRASM ver. 2.1.42  Z:\Users\angusyuen\Desktop\University\COMP2121\Homework.asm Sat Mar 14 09:32:40 2015
+
+
+DEF  a_low        r1
+DEF  a_high       r2
+DEF  b_low        r3
+DEF  b_high       r4
+DEF  sum_low      r5
+DEF  sum_high     r6
+DEF  i            r16

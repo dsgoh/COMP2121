@@ -1,0 +1,1 @@
+<AVRWorkspace><IOSettings><CurrentRegisters><PORTG><register register="DDRG" group="PORTG" display="1" locked="0"/></PORTG><PORTG><register register="PING" group="PORTG" display="1" locked="0"/></PORTG><PORTG><register register="PORTG" group="PORTG" display="1" locked="0"/></PORTG></CurrentRegisters></IOSettings><part name="ATmega2560"/><Files/></AVRWorkspace>
