@@ -22,10 +22,16 @@
 rjmp main
 defint 5, 2 ; 0x205 -> 517
 defint 61, 0 ; 0x3D -> 61
+<<<<<<< HEAD
 defint 52, 3 ; 0x334 -> 820  
 ;defint 253, 0 ; 0xFD -> 253
 ;defint 73, 34 ; 0x2249 -> 8777
 ; decimals in defint are converted into hex
+=======
+defint 52, 3 ; 0x334 -> 820
+;defint 253, 0 ; 0xFD -> 253
+;defint 73, 34 ; 0x2249 -> 8777
+>>>>>>> 77130af01d999866cbdb8c29a0fe348506fadac2
 
 main:
 	ldi zl, low(NEXT<<1)
