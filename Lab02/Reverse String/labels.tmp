@@ -1,30 +1,30 @@
 <ASSEMBLER_INFO>
  <VERSION>2.1.42</VERSION>
  <DEVICE>ATmega2560</DEVICE>
- <WORKING_DIR>C:\users\angusyuen\Desktop\University\COMP2121\Lab02\Reverse String</WORKING_DIR>
+ <WORKING_DIR>C:\Users\Angus\AppData\Local\Temp</WORKING_DIR>
  <INCLUDE_PATH>
-  <DIR>C:\Program Files\Atmel\AVR Tools\AvrAssembler2\Appnotes</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\AVR Tools\AvrAssembler2\Appnotes</DIR>
  </INCLUDE_PATH>
- <SOURCE_FILE>C:\users\angusyuen\Desktop\University\COMP2121\Lab02\Reverse String\Reverse_String.asm</SOURCE_FILE>
+ <SOURCE_FILE>\\psf\Home\Desktop\University\COMP2121\Lab02\Reverse String\Reverse_String.asm</SOURCE_FILE>
  <INCLUDED_FILES>
-  <FILE>C:\Program Files\Atmel\AVR Tools\AvrAssembler2\Appnotes\m2560def.inc</FILE>
+  <FILE>C:\Program Files (x86)\Atmel\AVR Tools\AvrAssembler2\Appnotes\m2560def.inc</FILE>
  </INCLUDED_FILES>
  <OBJECT_FILES>
-  <FILE>C:\users\angusyuen\Desktop\University\COMP2121\Lab02\Reverse String\Reverse_String.obj</FILE>
+  <FILE>\\psf\Home\Desktop\University\COMP2121\Lab02\Reverse String\Reverse_String.obj</FILE>
  </OBJECT_FILES>
  <HEX_FILES>
-  <FILE>C:\users\angusyuen\Desktop\University\COMP2121\Lab02\Reverse String\Reverse_String.hex</FILE>
+  <FILE>\\psf\Home\Desktop\University\COMP2121\Lab02\Reverse String\Reverse_String.hex</FILE>
  </HEX_FILES>
  <OUTPUT_FILES>
-  <FILE>C:\users\angusyuen\Desktop\University\COMP2121\Lab02\Reverse String\Reverse_String.map</FILE>
+  <FILE>\\psf\Home\Desktop\University\COMP2121\Lab02\Reverse String\Reverse_String.map</FILE>
  </OUTPUT_FILES>
  <LABELS>
-  <memory><FILE>C:\users\angusyuen\Desktop\University\COMP2121\Lab02\Reverse String\Reverse_String.asm</FILE><LINE>4</LINE></memory>
-  <String><FILE>C:\users\angusyuen\Desktop\University\COMP2121\Lab02\Reverse String\Reverse_String.asm</FILE><LINE>7</LINE></String>
-  <start><FILE>C:\users\angusyuen\Desktop\University\COMP2121\Lab02\Reverse String\Reverse_String.asm</FILE><LINE>9</LINE></start>
-  <pushZero><FILE>C:\users\angusyuen\Desktop\University\COMP2121\Lab02\Reverse String\Reverse_String.asm</FILE><LINE>19</LINE></pushZero>
-  <main><FILE>C:\users\angusyuen\Desktop\University\COMP2121\Lab02\Reverse String\Reverse_String.asm</FILE><LINE>23</LINE></main>
-  <reverse><FILE>C:\users\angusyuen\Desktop\University\COMP2121\Lab02\Reverse String\Reverse_String.asm</FILE><LINE>30</LINE></reverse>
-  <end><FILE>C:\users\angusyuen\Desktop\University\COMP2121\Lab02\Reverse String\Reverse_String.asm</FILE><LINE>37</LINE></end>
+  <memory><FILE>\\psf\Home\Desktop\University\COMP2121\Lab02\Reverse String\Reverse_String.asm</FILE><LINE>4</LINE></memory>
+  <String><FILE>\\psf\Home\Desktop\University\COMP2121\Lab02\Reverse String\Reverse_String.asm</FILE><LINE>7</LINE></String>
+  <start><FILE>\\psf\Home\Desktop\University\COMP2121\Lab02\Reverse String\Reverse_String.asm</FILE><LINE>9</LINE></start>
+  <pushZero><FILE>\\psf\Home\Desktop\University\COMP2121\Lab02\Reverse String\Reverse_String.asm</FILE><LINE>19</LINE></pushZero>
+  <main><FILE>\\psf\Home\Desktop\University\COMP2121\Lab02\Reverse String\Reverse_String.asm</FILE><LINE>23</LINE></main>
+  <reverse><FILE>\\psf\Home\Desktop\University\COMP2121\Lab02\Reverse String\Reverse_String.asm</FILE><LINE>30</LINE></reverse>
+  <end><FILE>\\psf\Home\Desktop\University\COMP2121\Lab02\Reverse String\Reverse_String.asm</FILE><LINE>37</LINE></end>
  </LABELS>
 </ASSEMBLER_INFO>

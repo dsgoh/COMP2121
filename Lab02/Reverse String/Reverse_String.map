@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.1.42  C:\users\angusyuen\Desktop\University\COMP2121\Lab02\Reverse String\Reverse_String.asm Mon Mar 30 16:42:10 2015
+AVRASM ver. 2.1.42  \\psf\Home\Desktop\University\COMP2121\Lab02\Reverse String\Reverse_String.asm Tue Apr 14 18:08:39 2015
 
 
 EQU  SIGNATURE_000 0000001e
@@ -1361,8 +1361,8 @@ EQU  UTXC3addr    00000070
 EQU  INT_VECTORS_SIZE 00000072
 DSEG memory       00000200
 CSEG String       00000000
-CSEG start        00000002
-CSEG pushZero     0000000a
-CSEG main         0000000c
-CSEG reverse      00000011
-CSEG end          00000016
+CSEG start        00000006
+CSEG pushZero     0000000e
+CSEG main         00000010
+CSEG reverse      00000015
+CSEG end          0000001a

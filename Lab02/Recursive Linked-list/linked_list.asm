@@ -24,15 +24,25 @@
 
 .cseg
 rjmp main
-defstring "macros"
-defstring "are"
-defstring "funnnny"
+defstring "let's"
+defstring "try"
+defstring "this"
+defstring "really"
+defstring "long"
+defstring "string"
 
 main:
 	ldi zl, low(NEXT_STRING<<1)
 	ldi zh, high(NEXT_STRING<<1)
+	cpi zl,0 
+	cpc zh, r0
+	breq end
 
 init:
+	ldi r28, low(RAMEND)
+	ldi r29, high(RAMEND)
+	out SPH, r29
+	out SPL, r28
 	lpm nextAddressL, z+
 	lpm nextAddressH, z+
 	mov currAddressL, zl
@@ -46,6 +56,8 @@ end:
 	rjmp end
 
 findLargest:
+	in r28, SPL
+	in r29, SPH
 	inc currLength
 	lpm currString, z+
 	cpi currString, 0

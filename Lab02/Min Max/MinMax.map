@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.1.42  \\psf\Home\Desktop\University\COMP2121\Lab02\Min Max\MinMax.asm Thu Apr 02 00:12:28 2015
+AVRASM ver. 2.1.42  \\psf\Home\Desktop\University\COMP2121\Lab02\Min Max\MinMax.asm Tue Apr 14 18:22:30 2015
 
 
 EQU  SIGNATURE_000 0000001e
@@ -1364,18 +1364,19 @@ DEF  nextAddressL r16
 DEF  nextAddressH r17
 DEF  currNumL     r18
 DEF  currNumH     r19
-SET  NEXT         00000009
-CSEG main         0000000b
-SET  T            00000009
-CSEG findLargest  0000000f
-CSEG end          0000000e
-CSEG L3           00000019
-CSEG isLowest     00000025
-CSEG L6           00000030
-CSEG epilogue     0000003d
-CSEG initLowest   00000020
-CSEG isHighest    0000002a
-CSEG loopforever  0000001f
-CSEG L5           0000002f
-CSEG checkLargest 00000035
-CSEG singleElement 00000038
+DEF  lowNumL      r20
+DEF  lowNumH      r21
+DEF  count        r22
+SET  NEXT         00000005
+CSEG main         00000007
+SET  T            00000005
+CSEG end          00000018
+CSEG init         0000000c
+CSEG findLargest  00000019
+CSEG L3           00000024
+CSEG isLowest     00000030
+CSEG L6           0000003a
+CSEG epilogue     0000003f
+CSEG initLowest   0000002b
+CSEG isHighest    00000035
+CSEG loopforever  0000002a
