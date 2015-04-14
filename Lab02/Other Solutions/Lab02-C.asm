@@ -1,12 +1,12 @@
 .include "m2560def.inc"
 
-;Define your own macro called defint that defines a 
-;linked list of signed 16-bit integers in program
-;memory. Write a recursive function that takes the byte 
-;address of the first list entry in the Z pointer,
-;and calculates the largest and smallest integers in 
-;the list. The largest integer should be returned in
-;XH:XL, and the smallest in YH:YL.
+; Define your own macro called defint that defines a 
+; linked list of signed 16-bit integers in program
+; memory. Write a recursive function that takes the byte 
+; address of the first list entry in the Z pointer,
+; and calculates the largest and smallest integers in 
+; the list. The largest integer should be returned in
+; XH:XL, and the smallest in YH:YL.
 
 .def next_low_address = r3
 .def next_high_address = r2
@@ -29,12 +29,12 @@
 .cseg
 rjmp start
 
-defint 123
-defint 23
-defint 12
-defint -12
-defint 244
-defint 32767
+defint 32
+defint -50
+defint -100
+defint 2000
+defint -23
+defint 555
 
 start:
 	clr smallest_low_byte
@@ -60,11 +60,11 @@ findLargestAndSmallest:
 	cpc smallest_high_byte, useless_register
 	breq setLargestAndSmallest ; should only happen in the first iteration of function call
 
-	; if greater than or equal to 32768 (highest 16-bit number + 1) then it is negative
-	cpi current_number_low, low(32767)
-	ldi useless_register, high(32767)
+	; compare with 0, if it is less than then it is negative
+	cpi current_number_low, low(0)
+	ldi useless_register, high(0)
 	cpc current_number_high, useless_register
-	brge currentIsNegative
+	brlt currentIsNegative
 
 	; else it is positive, then we first compare with highest
 	cp current_number_low, largest_low_byte
@@ -83,36 +83,32 @@ findLargestAndSmallest:
 		; the less negative the number is, i.e. -12 = 65524 = 65536 - 12
 		; set smallest if smallest = positive OR smallest = negative && current < smallest
 		; set largest if largest = negative && current > largest
-		cpi largest_low_byte, low(32767)
-		ldi useless_register, high(32767)
-		cpc largest_low_byte, useless_register
-		breq checkIfCurrentGreaterThanLargest
-		; check smallest = positive or negative
-		cpi smallest_low_byte, low(32767)
-		cpc smallest_high_byte, useless_register ; smallest - 0
-		brlt setSmallest; if it is less than then smallest is positive
-		; otherwise smallest = negative
-		rjmp checkIfCurrentLessThanSmallest
+
+		; check largest = negative
+		cpi largest_low_byte, low(0) 
+		ldi useless_register, high(0)
+		cpc largest_high_byte, useless_register
+		brlt checkIfCurrentGreaterThanLargest
 		
 			checkIfCurrentGreaterThanLargest:
 				cp current_number_low, largest_low_byte
 				cpc current_number_high, largest_high_byte
-				breq setLargest ; set largest as largest = negative && current > largest
-				; if current < largest then just go next iteration
-				rjmp nextIteration
+				brge setLargest ; set largest as largest = negative && current > largest
+				; if current < largest then it can still be less than smallest since smallest is also negative
+
+		; check smallest = positive or negative
+		cpi smallest_low_byte, low(0)
+		cpc smallest_high_byte, useless_register ; smallest - 0
+		brge setSmallest; if it is greater than then smallest is positive
+		; otherwise smallest = negative
+		rjmp checkIfCurrentLessThanSmallest
 		
 			checkIfCurrentLessThanSmallest:
 				cp current_number_low, smallest_low_byte
 				cpc current_number_high, smallest_high_byte ; - current - (-smallest)
-				brge setSmallest; if it is positive then current is smaller than smallest
-				rjmp nextIteration
-		; if current lowest is positive then we check highest..
+				brlt setSmallest; if it is positive then current is smaller than smallest
 
-	setLargestAndSmallest:
-		mov smallest_low_byte, current_number_low
-		mov smallest_high_byte, current_number_high
-		mov largest_low_byte, current_number_low
-		mov largest_high_byte, current_number_high
+		; otherwise it is neither smaller than smallest nor larger than largest so go to next
 		rjmp nextIteration
 
 	setLargest:
@@ -125,16 +121,29 @@ findLargestAndSmallest:
 		mov smallest_low_byte, current_number_low
 		rjmp nextIteration
 
+	setLargestAndSmallest:
+		mov smallest_low_byte, current_number_low
+		mov smallest_high_byte, current_number_high
+		mov largest_low_byte, current_number_low
+		mov largest_high_byte, current_number_high
+		rjmp nextIteration
+
 	nextIteration:
 		; load in next number address into Z then call function
 		mov ZL, next_low_address
 		mov ZH, next_high_address
+
 		; unless next_address is null then we reached end of linked list
 		cpi ZL, low(0)
 		ldi useless_register, high(0)
 		cpc ZH, useless_register
 		breq reachedEndOfList
+
+		; if it's not null then call function again
 		rcall findLargestAndSmallest
+
+		; return
+		ret
 
 	reachedEndOfList:
 		mov XH, largest_high_byte
