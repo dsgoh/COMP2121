@@ -1,0 +1,2 @@
+@ECHO OFF
+"C:\Program Files (x86)\Atmel\AVR Tools\AvrAssembler2\avrasm2.exe" -S "\\psf\Home\Desktop\University\COMP2121\Lab03\labels.tmp" -fI -W+ie -C V3 -o "\\psf\Home\Desktop\University\COMP2121\Lab03\Moving_Pattern.hex" -d "\\psf\Home\Desktop\University\COMP2121\Lab03\Moving_Pattern.obj" -e "\\psf\Home\Desktop\University\COMP2121\Lab03\Moving_Pattern.eep" -m "\\psf\Home\Desktop\University\COMP2121\Lab03\Moving_Pattern.map" "\\psf\Home\Desktop\University\COMP2121\Lab03\Moving_Pattern.asm"
