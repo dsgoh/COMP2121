@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.1.42  C:\Users\angusyuen\Documents\COMP2121\Lab03\PartC\Dynamic_Pattern.asm Fri Apr 24 15:04:41 2015
+AVRASM ver. 2.1.42  C:\Users\angusyuen\Documents\COMP2121\Lab03\Dynamic Pattern\Dynamic_Pattern.asm Sat Apr 25 22:10:15 2015
 
 
 EQU  SIGNATURE_000 0000001e
@@ -1364,24 +1364,25 @@ DEF  output       r17
 DEF  count        r18
 DEF  nBit         r19
 DEF  debounce     r20
-DEF  nFlash       r21
+DEF  nFlash       r22
 DSEG SecondCounter 00000200
 DSEG TempCounter  00000202
 CSEG RESET        00000030
-CSEG EXT_INT0     0000009f
-CSEG EXT_INT1     000000af
-CSEG Timer0OVF    00000048
-CSEG main         000000c6
-CSEG handleLights 0000004d
-CSEG handleDebounce 00000075
-CSEG NotSecond    00000094
-CSEG displayBlank 00000061
-CSEG displayOutput 00000063
-CSEG prologue     00000066
-CSEG EndIF        00000098
-CSEG isDebounced0 000000a2
-CSEG checkPos     000000bf
-CSEG isDebounced1 000000b2
-CSEG return       000000c5
-CSEG findPos      000000c1
-CSEG loop         000000d0
+CSEG EXT_INT0     000000a7
+CSEG EXT_INT1     000000b8
+CSEG Timer0OVF    00000049
+CSEG main         000000d0
+CSEG handleLights 0000004e
+CSEG handleDebounce 00000088
+CSEG NotSecond    0000006e
+CSEG displayBlank 00000067
+CSEG displayOutput 00000062
+CSEG getNextInput 00000069
+CSEG prologue     00000079
+CSEG EndIF        00000072
+CSEG isDebounced0 000000aa
+CSEG checkPos     000000c9
+CSEG isDebounced1 000000bb
+CSEG return       000000cf
+CSEG findPos      000000cb
+CSEG loop         000000da

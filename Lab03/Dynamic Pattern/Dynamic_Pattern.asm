@@ -5,7 +5,7 @@
 .def count = r18
 .def nBit = r19
 .def debounce = r20
-.def nFlash = r21
+.def nFlash = r22
 
 .macro clear
 	ldi YL, low(@0)
@@ -50,6 +50,7 @@ RESET:
 	clr nBit
 	clr debounce
 	clr r0
+	clr nFlash
 
 	ser temp					; set temp to 0xFF
 	out DDRC, temp				; set DDRC to 0xFF, 8 pins, so setting 8 bits to 1 sets 8 pins for output
@@ -97,17 +98,39 @@ Timer0OVF:
 		in temp, PORTC
 		cp temp, r0					; compare current state of PORTC with 0
 		brne displayBlank			; if it is not equal, then we are currently displaying output, so now we want to display blank LEDs
-		cp temp, r0					; if the current state is all blank
-		breq displayOutput			; then we want to display the actual user inputted leds
+		cp temp, r0							; if the current state is all blank
+		breq displayOutput					; then we want to display the actual user inputted leds
+
+		displayOutput:
+			inc nFlash
+			cpi nFlash, 4
+			breq getNextInput
+			out PORTC, output
+			rjmp prologue
 
 		displayBlank:
 			out PORTC, r0
 			rjmp prologue
 
-		displayOutput:
-			out PORTC, output
-			inc nFlash
+		getNextInput:
+			out PORTC, r0
+			clr output
+			clr nBit
+			clr debounce
 			rjmp prologue
+
+	NotSecond:
+		sts TempCounter, r24
+		sts TempCounter+1, r25
+	
+	EndIF:
+		pop r24
+		pop r25
+		pop YL
+		pop YH
+		pop temp
+		out SREG, temp
+		reti
 
 	prologue:
 		clear TempCounter
@@ -150,19 +173,6 @@ Timer0OVF:
 
 		rjmp EndIF
 
-NotSecond:
-	sts TempCounter, r24
-	sts TempCounter+1, r25
-	
-EndIF:
-	pop r24
-	pop r25
-	pop YL
-	pop YH
-	pop temp
-	out SREG, temp
-	reti
-
 EXT_INT0:
 	cpi debounce, 0
 	breq isDebounced0
@@ -178,7 +188,7 @@ EXT_INT0:
 		rcall checkPos
 		or output, temp
 
-		;out PORTC, output
+		out PORTC, output
 
 		pop temp
 		out SREG, temp
@@ -202,7 +212,7 @@ EXT_INT1:
 		rcall checkPos
 		or output, temp
 
-		;out PORTC, output
+		out PORTC, output
 
 		pop temp
 		out SREG, temp
