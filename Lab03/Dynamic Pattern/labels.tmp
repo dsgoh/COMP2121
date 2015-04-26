@@ -19,27 +19,23 @@
   <FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Dynamic Pattern\Dynamic_Pattern.map</FILE>
  </OUTPUT_FILES>
  <LABELS>
-  <SecondCounter><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Dynamic Pattern\Dynamic_Pattern.asm</FILE><LINE>21</LINE></SecondCounter>
-  <TempCounter><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Dynamic Pattern\Dynamic_Pattern.asm</FILE><LINE>24</LINE></TempCounter>
-  <RESET><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Dynamic Pattern\Dynamic_Pattern.asm</FILE><LINE>45</LINE></RESET>
-  <EXT_INT0><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Dynamic Pattern\Dynamic_Pattern.asm</FILE><LINE>200</LINE></EXT_INT0>
-  <EXT_INT1><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Dynamic Pattern\Dynamic_Pattern.asm</FILE><LINE>227</LINE></EXT_INT1>
-  <Timer0OVF><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Dynamic Pattern\Dynamic_Pattern.asm</FILE><LINE>78</LINE></Timer0OVF>
-  <main><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Dynamic Pattern\Dynamic_Pattern.asm</FILE><LINE>277</LINE></main>
-  <handleLights><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Dynamic Pattern\Dynamic_Pattern.asm</FILE><LINE>87</LINE></handleLights>
-  <handleDebounce><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Dynamic Pattern\Dynamic_Pattern.asm</FILE><LINE>158</LINE></handleDebounce>
-  <NotSecond><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Dynamic Pattern\Dynamic_Pattern.asm</FILE><LINE>145</LINE></NotSecond>
-  <displayBlank><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Dynamic Pattern\Dynamic_Pattern.asm</FILE><LINE>133</LINE></displayBlank>
-  <displayOutput><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Dynamic Pattern\Dynamic_Pattern.asm</FILE><LINE>116</LINE></displayOutput>
-  <getNextInput><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Dynamic Pattern\Dynamic_Pattern.asm</FILE><LINE>137</LINE></getNextInput>
-  <prologue><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Dynamic Pattern\Dynamic_Pattern.asm</FILE><LINE>188</LINE></prologue>
-  <EndIF><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Dynamic Pattern\Dynamic_Pattern.asm</FILE><LINE>149</LINE></EndIF>
-  <isDebounced0><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Dynamic Pattern\Dynamic_Pattern.asm</FILE><LINE>205</LINE></isDebounced0>
-  <checkPos><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Dynamic Pattern\Dynamic_Pattern.asm</FILE><LINE>262</LINE></checkPos>
-  <display><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Dynamic Pattern\Dynamic_Pattern.asm</FILE><LINE>254</LINE></display>
-  <isDebounced1><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Dynamic Pattern\Dynamic_Pattern.asm</FILE><LINE>232</LINE></isDebounced1>
-  <return><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Dynamic Pattern\Dynamic_Pattern.asm</FILE><LINE>274</LINE></return>
-  <findPos><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Dynamic Pattern\Dynamic_Pattern.asm</FILE><LINE>268</LINE></findPos>
-  <loop><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Dynamic Pattern\Dynamic_Pattern.asm</FILE><LINE>281</LINE></loop>
+  <SecondCounter><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Dynamic Pattern\Dynamic_Pattern.asm</FILE><LINE>20</LINE></SecondCounter>
+  <TempCounter><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Dynamic Pattern\Dynamic_Pattern.asm</FILE><LINE>23</LINE></TempCounter>
+  <RESET><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Dynamic Pattern\Dynamic_Pattern.asm</FILE><LINE>44</LINE></RESET>
+  <EXT_INT0><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Dynamic Pattern\Dynamic_Pattern.asm</FILE><LINE>142</LINE></EXT_INT0>
+  <EXT_INT1><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Dynamic Pattern\Dynamic_Pattern.asm</FILE><LINE>167</LINE></EXT_INT1>
+  <Timer0OVF><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Dynamic Pattern\Dynamic_Pattern.asm</FILE><LINE>76</LINE></Timer0OVF>
+  <main><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Dynamic Pattern\Dynamic_Pattern.asm</FILE><LINE>201</LINE></main>
+  <init><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Dynamic Pattern\Dynamic_Pattern.asm</FILE><LINE>77</LINE></init>
+  <NotSecond><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Dynamic Pattern\Dynamic_Pattern.asm</FILE><LINE>129</LINE></NotSecond>
+  <startDisplay><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Dynamic Pattern\Dynamic_Pattern.asm</FILE><LINE>98</LINE></startDisplay>
+  <clearLights><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Dynamic Pattern\Dynamic_Pattern.asm</FILE><LINE>115</LINE></clearLights>
+  <flashDisplay><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Dynamic Pattern\Dynamic_Pattern.asm</FILE><LINE>106</LINE></flashDisplay>
+  <finish><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Dynamic Pattern\Dynamic_Pattern.asm</FILE><LINE>119</LINE></finish>
+  <EndIF><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Dynamic Pattern\Dynamic_Pattern.asm</FILE><LINE>133</LINE></EndIF>
+  <isDebounced0><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Dynamic Pattern\Dynamic_Pattern.asm</FILE><LINE>147</LINE></isDebounced0>
+  <updateOutput><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Dynamic Pattern\Dynamic_Pattern.asm</FILE><LINE>195</LINE></updateOutput>
+  <isDebounced1><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Dynamic Pattern\Dynamic_Pattern.asm</FILE><LINE>172</LINE></isDebounced1>
+  <loop><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Dynamic Pattern\Dynamic_Pattern.asm</FILE><LINE>205</LINE></loop>
  </LABELS>
 </ASSEMBLER_INFO>

@@ -1,20 +1,19 @@
 .include "m2560def.inc"
 
-.def tempOutput = r1
 .def temp = r16
-.def output = r17
-.def count = r18
+.def newOutput = r17
+.def currOutput = r18
 .def nBit = r19
 .def debounce = r20
-.def nFlash = r22
-//.def isNextInput = r23
+.def nFlash = r21
+.def isDisplaying = r22
 
 .macro clear
 	ldi YL, low(@0)
 	ldi YH, high(@0)
-	clr r21
-	st Y+, r21
-	st Y, r21
+	clr temp
+	st Y+, temp
+	st Y, temp
 .endmacro
 
 .dseg 
@@ -48,13 +47,12 @@ RESET:
 	ldi temp, high(RAMEND) 
 	out SPH, temp
 
-	clr output
+	clr newOutput
 	clr nBit
 	clr debounce
-	clr r0
 	clr nFlash
-	//clr isNextInput
-	clr tempOutput
+	clr currOutput
+	clr isDisplaying
 
 	ser temp					; set temp to 0xFF
 	out DDRC, temp				; set DDRC to 0xFF, 8 pins, so setting 8 bits to 1 sets 8 pins for output
@@ -76,17 +74,9 @@ RESET:
 	jmp main
 
 Timer0OVF:
-/*	cpi isNextInput, 1
-	breq handleLights*/
-	cpi nBit, 8						; if we have 8 bits inputted
-	breq handleLights				; we need to flash the lights
-	cpi debounce, 0					; if debounce is not 0
-	brne handleDebounce				; we need to make debounce 0, after some timer
-	reti
-
-	handleLights:
-		in temp, SREG
-		push temp
+	init:
+		in temp, SREG				; store current state of status registers in temp
+		push temp					; push conflict registers onto the stack
 		push YH
 		push YL
 		push r25
@@ -95,107 +85,59 @@ Timer0OVF:
 		lds r24, TempCounter
 		lds r25, TempCounter+1
 		adiw r25:r24, 1
-		
-		//cpi isNextInput, 1
-		//breq lastDisplay
 
 		cpi r24, low(7812)			; 256*8/clock speed, where clockspeed is 16MHz then 1000000/128 = 7812, 1 second
 		ldi temp, high(7812)		
 		cpc r25, temp
-		brne NotSecond
+		brne NotSecond				; if it is not a second yet skip to notSecond
+		clr debounce				; past this is one second
 
-	/*	cpi isNextInput, 1
-		breq lastBlank*/
 
-		in temp, PORTC
-		cp temp, r0					; compare current state of PORTC with 0
-		brne displayBlank			; if it is not equal, then we are currently displaying output, so now we want to display blank LEDs
-									; if the current state is all blank
-									; then we want to display the actual user inputted leds
-		
-		displayOutput:
-			inc nFlash
-			cpi nFlash, 3
-			breq getNextInput
-			out PORTC, output
-			rjmp prologue
+	; on less than 8 bits, it will skip through all of these and go down
+	; to flashDisplay
+	startDisplay:
+		cpi nFlash, 3				
+		breq clearLights
+		cpi isDisplaying, 0
+		brne clearLights
 
-		/*lastDisplay:
-			clr isNextInput
-			out PORTC, tempOutput
-			rjmp prologue*
+	; when we have less than 8 bits, leds will not flash,
+	; since currOutput is still 0
+	flashDisplay:
+		out PORTC, currOutput
+		inc isDisplaying					; sets isDisplaying to 1, display is showing
+		inc nFlash							; we flash, so we increment it
+		rjmp finish
 
-		lastBlank:
-			clr nFlash
-			out PORTC, r0
-			rjmp prologue*/
+	; will only enter here if we have 8 bits
+	; this clears the lights
+	; sets the isDisplaying "boolean" to false
+	clearLights:
+		out PORTC, r0
+		clr isDisplaying 
 
-		displayBlank:
-			out PORTC, r0
-			rjmp prologue
+	finish:
+		clear TempCounter   		; reset the temporary counter.
+	    lds r24, SecondCounter		; loading value of second counter
+	    lds r25, SecondCounter+1
+	    adiw r25:r24, 1     		; increase second counter by 1
 
-		getNextInput:
-			out PORTC, r0
-			clr output
-			clr nBit
-			clr debounce
-			clr nFlash
-			rjmp prologue
+	    sts SecondCounter, r24
+	    sts SecondCounter+1, r25
+	    rjmp EndIF
 
 	NotSecond:
 		sts TempCounter, r24
 		sts TempCounter+1, r25
-	
+
 	EndIF:
-		pop r24
-		pop r25
-		pop YL
-		pop YH
-		pop temp
-		out SREG, temp
-		reti
-
-	handleDebounce:
-		in temp, SREG
-		push temp
-		push YH
-		push YL
-		push r25
-		push r24
-
-		lds r24, TempCounter
-		lds r25, TempCounter+1
-		adiw r25:r24, 1
-		
-		cpi r24, low(1953)			; 256*8/clock speed, where clockspeed is 16 then 1000000/128 = 7812
-		ldi temp, high(1953)		; to be safe we use 250 milliseconds, so 7812*0.25 = 1953, which is 250 milliseconds
-		cpc r25, temp
-		brne NotSecond
-
-		clear TempCounter
-
-		lds r24, SecondCounter
-		lds r25, SecondCounter+1
-		adiw r25:r24, 1
-
-		sts SecondCounter, r24
-		sts SecondCounter+1, r25
-
-		ldi debounce, 0
-
-		rjmp EndIF
-
-	prologue:
-		clear TempCounter
-
-		lds r24, SecondCounter
-		lds r25, SecondCounter+1
-		adiw r25:r24, 1
-
-		sts SecondCounter, r24
-		sts SecondCounter+1, r25
-		rjmp EndIF
-
+        pop r24          
+        pop r25          ; restoring conflict registers
+        pop YL
+        pop YH
+        pop temp
+        out SREG, temp
+        reti         		; return from interrupt
 
 EXT_INT0:
 	cpi debounce, 0
@@ -208,20 +150,18 @@ EXT_INT0:
 		in temp, SREG 
 		push temp
 
-		ldi temp, 0b00000000
-		rcall checkPos
-		or output, temp
+		ldi temp, 0b10000000	; tells the user they selected PB0
+		out PORTC, temp			; outputs it
 
-		;out PORTC, output
+		lsl newOutput 			; this adds a zero
 
 		pop temp
 		out SREG, temp
 		pop temp
 		inc nBit
-		clr count
 
 		cpi nBit, 8
-		breq display
+		breq updateOutput
 		reti
 
 EXT_INT1:
@@ -235,44 +175,28 @@ EXT_INT1:
 		in temp, SREG
 		push temp
 
-		ldi temp, 0b10000000
-		rcall checkPos
-		or output, temp
+		lsl newOutput					; shifts everything by 1
+		ori newOutput, 0b00000001		; then or's with 1
 
-		;out PORTC, output
+		ldi temp, 0b01000000			; this is used to tell the user that we selected PB1
+		out PORTC, temp					; outputs it
 
 		pop temp
 		out SREG, temp
 		pop temp
 		inc nBit
-		clr count
 
 		cpi nBit, 8
-		breq display
+		breq updateOutput
 		reti
 
-display:
-	out PORTC, output
+; When we have fulfilled all 8 bits,
+; we will update our currentoutput
+updateOutput:
+	mov	currOutput, newOutput
+	clr nFlash
+	clr nBit
 	reti
-
-// if nBit is 0, then that means this is the first user input
-// and it immediately returns
-// else it will run into findPos, and find the latest position of which we need
-// to enter the 0 or 1 value into the pattern
-checkPos:
-	cpi nBit, 0
-	breq return
-	
-// keep incrementing count to find the nBit'th position
-// which is the position we last inputted a value in
-findPos:
-	lsr temp
-	inc count
-	cp count, nBit
-	brlo findPos
-
-return:
-	ret
 
 main:
 	clear SecondCounter
