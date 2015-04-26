@@ -19,24 +19,27 @@
   <FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.map</FILE>
  </OUTPUT_FILES>
  <LABELS>
-  <SecondCounter><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>20</LINE></SecondCounter>
-  <TempCounter><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>23</LINE></TempCounter>
-  <Pattern><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>26</LINE></Pattern>
-  <RESET><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>47</LINE></RESET>
-  <EXT_INT0><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>165</LINE></EXT_INT0>
-  <EXT_INT1><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>192</LINE></EXT_INT1>
-  <Timer0OVF><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>88</LINE></Timer0OVF>
-  <main><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>229</LINE></main>
-  <init><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>89</LINE></init>
-  <NotSecond><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>152</LINE></NotSecond>
-  <startDisplay><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>121</LINE></startDisplay>
-  <clearLights><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>138</LINE></clearLights>
-  <flashDisplay><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>129</LINE></flashDisplay>
-  <finish><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>142</LINE></finish>
-  <EndIF><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>156</LINE></EndIF>
-  <isDebounced0><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>170</LINE></isDebounced0>
-  <updateOutput><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>222</LINE></updateOutput>
-  <isDebounced1><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>197</LINE></isDebounced1>
-  <loop><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>233</LINE></loop>
+  <SecondCounter><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>21</LINE></SecondCounter>
+  <TempCounter><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>24</LINE></TempCounter>
+  <Pattern><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>27</LINE></Pattern>
+  <RESET><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>48</LINE></RESET>
+  <EXT_INT0><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>176</LINE></EXT_INT0>
+  <EXT_INT1><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>204</LINE></EXT_INT1>
+  <Timer0OVF><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>90</LINE></Timer0OVF>
+  <main><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>242</LINE></main>
+  <init><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>91</LINE></init>
+  <debounceTimer><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>114</LINE></debounceTimer>
+  <lightTimer><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>106</LINE></lightTimer>
+  <NotSecond><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>163</LINE></NotSecond>
+  <startDisplay><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>127</LINE></startDisplay>
+  <clearLights><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>144</LINE></clearLights>
+  <flashDisplay><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>135</LINE></flashDisplay>
+  <finish><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>153</LINE></finish>
+  <clearCurrOutput><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>150</LINE></clearCurrOutput>
+  <EndIF><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>167</LINE></EndIF>
+  <isDebounced0><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>181</LINE></isDebounced0>
+  <updateOutput><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>235</LINE></updateOutput>
+  <isDebounced1><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>209</LINE></isDebounced1>
+  <loop><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>246</LINE></loop>
  </LABELS>
 </ASSEMBLER_INFO>

@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.1.42  C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm Sun Apr 26 20:36:36 2015
+AVRASM ver. 2.1.42  C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm Sun Apr 26 22:06:08 2015
 
 
 EQU  SIGNATURE_000 0000001e
@@ -1366,22 +1366,26 @@ DEF  nBit         r19
 DEF  debounce     r20
 DEF  nFlash       r21
 DEF  isDisplaying r22
+DEF  isInputting  r23
 DSEG SecondCounter 00000200
 DSEG TempCounter  00000202
 DSEG Pattern      00000204
 CSEG RESET        00000030
-CSEG EXT_INT0     00000082
-CSEG EXT_INT1     00000094
-CSEG Timer0OVF    0000004e
-CSEG main         000000ac
-CSEG init         0000004e
-CSEG NotSecond    00000077
-CSEG startDisplay 0000005e
-CSEG clearLights  00000066
-CSEG flashDisplay 00000062
-CSEG finish       00000068
-CSEG EndIF        0000007b
-CSEG isDebounced0 00000085
-CSEG updateOutput 000000a7
-CSEG isDebounced1 00000097
-CSEG loop         000000b6
+CSEG EXT_INT0     00000091
+CSEG EXT_INT1     000000a4
+CSEG Timer0OVF    0000004f
+CSEG main         000000bd
+CSEG init         0000004f
+CSEG debounceTimer 00000062
+CSEG lightTimer   0000005c
+CSEG NotSecond    00000086
+CSEG startDisplay 0000006a
+CSEG clearLights  00000072
+CSEG flashDisplay 0000006e
+CSEG finish       00000077
+CSEG clearCurrOutput 00000076
+CSEG EndIF        0000008a
+CSEG isDebounced0 00000094
+CSEG updateOutput 000000b8
+CSEG isDebounced1 000000a7
+CSEG loop         000000c7

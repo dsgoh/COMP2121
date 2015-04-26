@@ -7,6 +7,7 @@
 .def debounce = r20
 .def nFlash = r21
 .def isDisplaying = r22
+.def isInputting = r23
 
 .macro clear
 	ldi YL, low(@0)
@@ -65,6 +66,7 @@ RESET:
 	clr nFlash
 	clr currOutput
 	clr isDisplaying
+	clr isInputting
 
 	ser temp					; set temp to 0xFF
 	out DDRC, temp				; set DDRC to 0xFF, 8 pins, so setting 8 bits to 1 sets 8 pins for output
@@ -97,24 +99,28 @@ Timer0OVF:
 		lds r24, TempCounter
 		lds r25, TempCounter+1
 		adiw r25:r24, 1
-	;	cpi debounce, 1
-		;breq debounceTimer
-	
-	;	lightTimer:
+
+		cpi isInputting, 0
+		brge debounceTimer
+
+		lightTimer:
 			cpi r24, low(7812)			; 256*8/clock speed, where clockspeed is 16MHz then 1000000/128 = 7812, 1 second
 			ldi temp, high(7812)		
 			cpc r25, temp
 			brne NotSecond				; if it is not a second yet skip to notSecond
-			;rjmp startDisplay
+			clr debounce
+			rjmp startDisplay
 
-		;debounceTimer:
-			;cpi r24, low(1953)			; 256*8/clock speed, where clockspeed is 16MHz then 1000000/128 = 7812, 1 second
-			;ldi temp, high(1953)		
-			;cpc r25, temp
-			;brne NotSecond				; if it is not a second yet skip to notSecond
+		debounceTimer:
+			clr isInputting
+			cpi isDisplaying, 0
+			brne lightTimer
+
+			cpi r24, low(1953)			; 256*8/clock speed, where clockspeed is 16MHz then 1000000/128 = 7812, 1 second
+			ldi temp, high(1953)		
+			cpc r25, temp
+			brne NotSecond				; if it is not a second yet skip to notSecond
 			clr debounce				; past this is one second
-			;rjmp clearLights
-
 
 	; on less than 8 bits, it will skip through all of these and go down
 	; to flashDisplay
@@ -137,7 +143,12 @@ Timer0OVF:
 	; sets the isDisplaying "boolean" to false
 	clearLights:
 		out PORTC, r0
-		clr isDisplaying 
+		clr isDisplaying
+		cpi nFlash, 3
+		brlo finish
+		
+	clearCurrOutput:
+		clr currOutput 
 
 	finish:
 		clear TempCounter   		; reset the temporary counter.
@@ -169,6 +180,7 @@ EXT_INT0:
 
 	isDebounced0:
 		inc debounce
+		inc isInputting
 		push temp
 		in temp, SREG 
 		push temp
@@ -196,6 +208,7 @@ EXT_INT1:
 
 	isDebounced1:
 		inc debounce
+		inc isInputting
 		push temp
 		in temp, SREG
 		push temp
