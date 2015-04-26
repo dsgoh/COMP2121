@@ -100,8 +100,11 @@ Timer0OVF:
 		lds r25, TempCounter+1
 		adiw r25:r24, 1
 
+		cpi isDisplaying, 0
+		brne lightTimer
 		cpi isInputting, 0
-		brge debounceTimer
+		breq lightTimer
+		rjmp debounceTimer
 
 		lightTimer:
 			cpi r24, low(7812)			; 256*8/clock speed, where clockspeed is 16MHz then 1000000/128 = 7812, 1 second
@@ -112,15 +115,13 @@ Timer0OVF:
 			rjmp startDisplay
 
 		debounceTimer:
-			clr isInputting
-			cpi isDisplaying, 0
-			brne lightTimer
-
 			cpi r24, low(1953)			; 256*8/clock speed, where clockspeed is 16MHz then 1000000/128 = 7812, 1 second
 			ldi temp, high(1953)		
 			cpc r25, temp
 			brne NotSecond				; if it is not a second yet skip to notSecond
 			clr debounce				; past this is one second
+			out PORTC, r0
+			rjmp finish;
 
 	; on less than 8 bits, it will skip through all of these and go down
 	; to flashDisplay
@@ -237,6 +238,7 @@ updateOutput:
 	clr newOutput
 	clr nFlash
 	clr nBit
+	clr isInputting
 	reti
 
 main:
@@ -245,4 +247,3 @@ main:
 
 loop:
 	rjmp loop
-
