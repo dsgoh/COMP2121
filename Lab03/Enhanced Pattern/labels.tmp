@@ -1,0 +1,42 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.1.42</VERSION>
+ <DEVICE>ATmega2560</DEVICE>
+ <WORKING_DIR>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:\Program Files (x86)\Atmel\AVR Tools\AvrAssembler2\Appnotes</DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:\Program Files (x86)\Atmel\AVR Tools\AvrAssembler2\Appnotes\m2560def.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.map</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <SecondCounter><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>20</LINE></SecondCounter>
+  <TempCounter><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>23</LINE></TempCounter>
+  <Pattern><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>26</LINE></Pattern>
+  <RESET><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>47</LINE></RESET>
+  <EXT_INT0><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>165</LINE></EXT_INT0>
+  <EXT_INT1><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>192</LINE></EXT_INT1>
+  <Timer0OVF><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>88</LINE></Timer0OVF>
+  <main><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>229</LINE></main>
+  <init><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>89</LINE></init>
+  <NotSecond><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>152</LINE></NotSecond>
+  <startDisplay><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>121</LINE></startDisplay>
+  <clearLights><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>138</LINE></clearLights>
+  <flashDisplay><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>129</LINE></flashDisplay>
+  <finish><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>142</LINE></finish>
+  <EndIF><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>156</LINE></EndIF>
+  <isDebounced0><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>170</LINE></isDebounced0>
+  <updateOutput><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>222</LINE></updateOutput>
+  <isDebounced1><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>197</LINE></isDebounced1>
+  <loop><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>233</LINE></loop>
+ </LABELS>
+</ASSEMBLER_INFO>
