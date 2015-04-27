@@ -128,7 +128,7 @@ Timer0OVF:
 
 	finish:
 		clear SecondCounter 		; reset the temporary counter.
-	    lds r24, SecondCounter		; loading value of second counter
+	    lds r24, SecondCounter		; loading value of second counter, so storing it into r24 and r25
 	    lds r25, SecondCounter+1
 	    adiw r25:r24, 1     		; increase second counter by 1
 
@@ -145,8 +145,8 @@ Timer0OVF:
 		lds r25, MilliCounter+1
 		adiw r25:r24, 1
 
-		cpi r24, low(781)
-		ldi temp, high(781)
+		cpi r24, low(3906)
+		ldi temp, high(3906)
 		cpc r25, temp
 		brne NotMilli
 		clr debounce
@@ -167,8 +167,21 @@ Timer0OVF:
         reti         		; return from interrupt
 
 EXT_INT0:
+	ldi temp, (1<<ISC11) | (1<<ISC10) | (1<<ISC01) | (1<<ISC00)		; setting int1 and int0 for rising edge trigger, when signal is presented
+	sts EICRA, temp							; store temp back into EICRA
+
+	//this section handles multiple button press
+			in temp, EIFR
+			cpi temp, 0b00000010
+			;;sei
+			breq handleMultiplePress
+
 	cpi debounce, 0
 	breq isDebounced0
+
+	ldi temp, (1<<ISC11) | (1<<ISC01)		; setting int1 and int0 for falling edge trigger, each pair contains "10"
+	sts EICRA, temp						
+
 	reti
 
 	isDebounced0:
@@ -179,9 +192,9 @@ EXT_INT0:
 
 
 			//this section handles multiple button press
-			in temp, EIFR
-			cpi temp, 0b00000010
-			breq handleMultiplePress
+			;in temp, EIFR
+			;cpi temp, 0b00000010
+			;breq handleMultiplePress
 
 		ldi temp, 0b10000000	; tells the user they selected PB0
 		out PORTC, temp			; outputs it
@@ -197,11 +210,26 @@ EXT_INT0:
 
 		cpi nBit, 8
 		breq updateOutput
+
+		ldi temp, (1<<ISC11) | (1<<ISC01)		; setting int1 and int0 for falling edge trigger, each pair contains "10"
+		sts EICRA, temp						
+
 		reti
 
 EXT_INT1:
+	ldi temp, (1<<ISC11) | (1<<ISC10) | (1<<ISC01) | (1<<ISC00)		; setting int1 and int0 for rising edge trigger, when signal is present
+	sts EICRA, temp							; store temp back into EICRA
+
+			in temp, EIFR
+			cpi temp, 0b00000001
+			breq handleMultiplePress
+
 	cpi debounce, 0
 	breq isDebounced1
+
+	ldi temp, (1<<ISC11) | (1<<ISC01)		; setting int1 and int0 for falling edge trigger, each pair contains "10"
+	sts EICRA, temp						
+
 	reti
 
 	isDebounced1:
@@ -211,9 +239,9 @@ EXT_INT1:
 		push temp
 
 				//this section handles multiple button press
-				in temp, EIFR
-				cpi temp, 0b00000001
-				breq handleMultiplePress
+				;in temp, EIFR
+				;cpi temp, 0b00000001
+				;breq handleMultiplePress
 
 
 		lsl newOutput					; shifts everything by 1
@@ -231,6 +259,10 @@ EXT_INT1:
 
 		cpi nBit, 8
 		breq updateOutput
+
+		ldi temp, (1<<ISC11) | (1<<ISC01)		; setting int1 and int0 for falling edge trigger, each pair contains "10"
+		sts EICRA, temp						
+
 		reti
 
 
@@ -245,16 +277,17 @@ updateOutput:
 
 handleMultiplePress:
 	ldi temp, 0b00000000
-	out EIMSK, temp
+	out EIFR, temp
 	out PORTC, temp
 	ldi temp, 0xFF
-	cp xl, zl
-	cpc xh, zh
+	mov currOutput, temp
+	cp xl, zl					; base case of clearing the queue
+	cpc xh, zh					; if they are equal, don't need to clear
 	breq after
 
 		clearQueue:
-			st x+, temp
-			cp xl, zl
+			st x+, temp			; increment x and continue clearing
+			cp xl, zl			; until it reaches z
 			cpc xh, zh
 			brne clearQueue
 		
@@ -262,6 +295,8 @@ handleMultiplePress:
 			pop temp
 			out SREG, temp
 			pop temp
+			ldi temp, (1<<ISC11) | (1<<ISC01)		; setting int1 and int0 for falling edge trigger, each pair contains "10"
+			sts EICRA, temp						
 			reti
 
 main:
