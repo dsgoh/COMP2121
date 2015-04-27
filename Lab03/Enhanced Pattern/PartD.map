@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.1.42  C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm Mon Apr 27 22:37:59 2015
+AVRASM ver. 2.1.42  C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm Mon Apr 27 23:30:30 2015
 
 
 EQU  SIGNATURE_000 0000001e
@@ -1379,14 +1379,14 @@ CSEG NotSecond    00000076
 CSEG startDisplay 0000005d
 CSEG clearLights  00000065
 CSEG flashDisplay 00000061
-CSEG finish       00000067
+CSEG finishSecondCounter 00000067
 CSEG EndIF        0000008e
 CSEG checkMilli   0000007a
 CSEG NotMilli     0000008a
-CSEG handleMultiplePress 000000d7
+CSEG handleMultiplePress 000000d2
 CSEG isDebounced0 000000a1
-CSEG updateOutput 000000d2
+CSEG updateOutput 000000e5
 CSEG isDebounced1 000000bf
-CSEG after        000000e3
-CSEG clearQueue   000000df
+CSEG after        000000de
+CSEG clearQueue   000000da
 CSEG loop         000000f4

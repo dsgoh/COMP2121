@@ -117,7 +117,7 @@ Timer0OVF:
 		out PORTC, currOutput
 		inc isDisplaying					; sets isDisplaying to 1, display is showing
 		inc nFlash							; we flash, so we increment it
-		rjmp finish
+		rjmp finishSecondCounter
 
 	; will only enter here if we have 8 bits
 	; this clears the lights
@@ -126,7 +126,7 @@ Timer0OVF:
 		out PORTC, r0
 		clr isDisplaying
 
-	finish:
+	finishSecondCounter:
 		clear SecondCounter 		; reset the temporary counter.
 	    lds r24, SecondCounter		; loading value of second counter, so storing it into r24 and r25
 	    lds r25, SecondCounter+1
@@ -145,8 +145,8 @@ Timer0OVF:
 		lds r25, MilliCounter+1
 		adiw r25:r24, 1
 
-		cpi r24, low(3906)
-		ldi temp, high(3906)
+		cpi r24, low(781)
+		ldi temp, high(781)
 		cpc r25, temp
 		brne NotMilli
 		clr debounce
@@ -171,10 +171,9 @@ EXT_INT0:
 	sts EICRA, temp							; store temp back into EICRA
 
 	//this section handles multiple button press
-			in temp, EIFR
-			cpi temp, 0b00000010
-			;;sei
-			breq handleMultiplePress
+		in temp, EIFR
+		cpi temp, 0b00000010
+		breq handleMultiplePress
 
 	cpi debounce, 0
 	breq isDebounced0
@@ -265,16 +264,6 @@ EXT_INT1:
 
 		reti
 
-
-; When we have fulfilled all 8 bits,
-; we will update our currentoutput
-updateOutput:
-	ld currOutput, z+
-	clr newOutput
-	clr nFlash
-	clr nBit
-	reti
-
 handleMultiplePress:
 	ldi temp, 0b00000000
 	out EIFR, temp
@@ -298,6 +287,15 @@ handleMultiplePress:
 			ldi temp, (1<<ISC11) | (1<<ISC01)		; setting int1 and int0 for falling edge trigger, each pair contains "10"
 			sts EICRA, temp						
 			reti
+
+; When we have fulfilled all 8 bits,
+; we will update our currentoutput
+updateOutput:
+	ld currOutput, z+
+	clr newOutput
+	clr nFlash
+	clr nBit
+	reti
 
 main:
 	clear SecondCounter

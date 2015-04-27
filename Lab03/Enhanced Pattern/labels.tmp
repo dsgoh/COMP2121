@@ -24,24 +24,24 @@
   <Pattern><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>26</LINE></Pattern>
   <RESET><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>47</LINE></RESET>
   <EXT_INT0><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>169</LINE></EXT_INT0>
-  <EXT_INT1><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>219</LINE></EXT_INT1>
+  <EXT_INT1><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>218</LINE></EXT_INT1>
   <Timer0OVF><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>88</LINE></Timer0OVF>
-  <main><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>302</LINE></main>
+  <main><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>300</LINE></main>
   <timeSecond><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>100</LINE></timeSecond>
   <NotSecond><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>139</LINE></NotSecond>
   <startDisplay><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>108</LINE></startDisplay>
   <clearLights><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>125</LINE></clearLights>
   <flashDisplay><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>116</LINE></flashDisplay>
-  <finish><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>129</LINE></finish>
+  <finishSecondCounter><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>129</LINE></finishSecondCounter>
   <EndIF><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>160</LINE></EndIF>
   <checkMilli><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>143</LINE></checkMilli>
   <NotMilli><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>156</LINE></NotMilli>
-  <handleMultiplePress><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>278</LINE></handleMultiplePress>
-  <isDebounced0><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>187</LINE></isDebounced0>
-  <updateOutput><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>271</LINE></updateOutput>
-  <isDebounced1><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>235</LINE></isDebounced1>
-  <after><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>294</LINE></after>
-  <clearQueue><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>288</LINE></clearQueue>
-  <loop><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>306</LINE></loop>
+  <handleMultiplePress><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>267</LINE></handleMultiplePress>
+  <isDebounced0><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>186</LINE></isDebounced0>
+  <updateOutput><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>293</LINE></updateOutput>
+  <isDebounced1><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>234</LINE></isDebounced1>
+  <after><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>283</LINE></after>
+  <clearQueue><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>277</LINE></clearQueue>
+  <loop><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm</FILE><LINE>304</LINE></loop>
  </LABELS>
 </ASSEMBLER_INFO>
