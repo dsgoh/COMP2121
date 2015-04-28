@@ -1,6 +1,6 @@
 .include "m2560def.inc"
 
-.equ DOUBLESPEED_SIZE = 2
+.equ DOUBLESPEED_SIZE = 4
 .def isPressed0 = r5
 .def isPressed1 = r6
 .def temp = r16
@@ -76,7 +76,7 @@ RESET:
 	ser temp					; set temp to 0xFF
 	out DDRC, temp				; set DDRC to 0xFF, 8 pins, so setting 8 bits to 1 sets 8 pins for output
 
-	ldi temp, (2<<ISC10) | (2<<ISC00)		; setting int1 and int0 for falling edge trigger, each pair contains "10"
+	ldi temp, (0<<ISC10) | (0<<ISC00)		; setting int1 and int0 for falling edge trigger, each pair contains "10"
 	sts EICRA, temp							; store temp back into EICRA
 	
 	in temp, EIMSK							; store current state of EIMSK in temp
@@ -195,8 +195,8 @@ Timer0OVF:
 		lds r25, ButtonCounter+1
 		adiw r25:r24, 1
 
-		cpi r24, low(953)
-		ldi temp, high(953)
+		cpi r24, low(195)
+		ldi temp, high(195)
 		cpc r25, temp
 		brne NotButton
 		clr isPressed0

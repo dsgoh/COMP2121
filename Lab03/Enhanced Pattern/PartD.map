@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.1.42  C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm Tue Apr 28 16:01:06 2015
+AVRASM ver. 2.1.42  C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm Tue Apr 28 16:19:01 2015
 
 
 EQU  SIGNATURE_000 0000001e
@@ -1359,7 +1359,7 @@ EQU  URXC3addr    0000006c
 EQU  UDRE3addr    0000006e
 EQU  UTXC3addr    00000070
 EQU  INT_VECTORS_SIZE 00000072
-EQU  DOUBLESPEED_SIZE 00000002
+EQU  DOUBLESPEED_SIZE 00000004
 DEF  isPressed0   r5
 DEF  isPressed1   r6
 DEF  temp         r16
@@ -1374,9 +1374,9 @@ DSEG ButtonCounter 00000204
 DSEG Pattern      00000206
 CSEG RESET        00000030
 CSEG EXT_INT0     000000ac
-CSEG EXT_INT1     000000bf
+CSEG EXT_INT1     000000c0
 CSEG Timer0OVF    00000050
-CSEG main         000000dd
+CSEG main         000000df
 CSEG halfSecond   00000062
 CSEG timeSecond   00000067
 CSEG startDisplay 0000006b
@@ -1389,8 +1389,8 @@ CSEG checkMilli   00000090
 CSEG checkButton  00000090
 CSEG NotButton    000000a1
 CSEG EndIF        000000a5
-CSEG handleMultiplePress 000000d3
+CSEG handleMultiplePress 000000d5
 CSEG isDebounced0 000000b3
-CSEG updateOutput 000000da
-CSEG isDebounced1 000000c6
-CSEG loop         000000e7
+CSEG updateOutput 000000dc
+CSEG isDebounced1 000000c7
+CSEG loop         000000e9
