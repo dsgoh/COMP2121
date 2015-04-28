@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.1.42  C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm Mon Apr 27 23:30:30 2015
+AVRASM ver. 2.1.42  C:\Users\angusyuen\Documents\COMP2121\Lab03\Enhanced Pattern\PartD.asm Tue Apr 28 16:01:06 2015
 
 
 EQU  SIGNATURE_000 0000001e
@@ -1359,34 +1359,38 @@ EQU  URXC3addr    0000006c
 EQU  UDRE3addr    0000006e
 EQU  UTXC3addr    00000070
 EQU  INT_VECTORS_SIZE 00000072
+EQU  DOUBLESPEED_SIZE 00000002
+DEF  isPressed0   r5
+DEF  isPressed1   r6
 DEF  temp         r16
 DEF  newOutput    r17
 DEF  currOutput   r18
 DEF  nBit         r19
-DEF  debounce     r20
 DEF  nFlash       r21
 DEF  isDisplaying r22
 DSEG SecondCounter 00000200
 DSEG MilliCounter 00000202
-DSEG Pattern      00000204
+DSEG ButtonCounter 00000204
+DSEG Pattern      00000206
 CSEG RESET        00000030
-CSEG EXT_INT0     00000095
-CSEG EXT_INT1     000000b3
-CSEG Timer0OVF    0000004e
-CSEG main         000000ea
-CSEG timeSecond   00000059
-CSEG NotSecond    00000076
-CSEG startDisplay 0000005d
-CSEG clearLights  00000065
-CSEG flashDisplay 00000061
-CSEG finishSecondCounter 00000067
-CSEG EndIF        0000008e
-CSEG checkMilli   0000007a
-CSEG NotMilli     0000008a
-CSEG handleMultiplePress 000000d2
-CSEG isDebounced0 000000a1
-CSEG updateOutput 000000e5
-CSEG isDebounced1 000000bf
-CSEG after        000000de
-CSEG clearQueue   000000da
-CSEG loop         000000f4
+CSEG EXT_INT0     000000ac
+CSEG EXT_INT1     000000bf
+CSEG Timer0OVF    00000050
+CSEG main         000000dd
+CSEG halfSecond   00000062
+CSEG timeSecond   00000067
+CSEG startDisplay 0000006b
+CSEG NotSecond    0000008c
+CSEG finishSecondCounter 0000007d
+CSEG clearLights  00000076
+CSEG flashDisplay 00000071
+CSEG clearNFlash  0000007b
+CSEG checkMilli   00000090
+CSEG checkButton  00000090
+CSEG NotButton    000000a1
+CSEG EndIF        000000a5
+CSEG handleMultiplePress 000000d3
+CSEG isDebounced0 000000b3
+CSEG updateOutput 000000da
+CSEG isDebounced1 000000c6
+CSEG loop         000000e7
