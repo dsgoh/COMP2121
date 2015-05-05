@@ -1,0 +1,46 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.1.42</VERSION>
+ <DEVICE>ATmega2560</DEVICE>
+ <WORKING_DIR>C:\Users\angusyuen\Documents\COMP2121\Lab04\Part C</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:\Program Files (x86)\Atmel\AVR Tools\AvrAssembler2\Appnotes</DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\angusyuen\Documents\COMP2121\Lab04\Part C\C.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:\Program Files (x86)\Atmel\AVR Tools\AvrAssembler2\Appnotes\m2560def.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\angusyuen\Documents\COMP2121\Lab04\Part C\C.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>C:\Users\angusyuen\Documents\COMP2121\Lab04\Part C\C.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>C:\Users\angusyuen\Documents\COMP2121\Lab04\Part C\C.map</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <RESET><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab04\Part C\C.asm</FILE><LINE>18</LINE></RESET>
+  <main><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab04\Part C\C.asm</FILE><LINE>34</LINE></main>
+  <colloop><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab04\Part C\C.asm</FILE><LINE>38</LINE></colloop>
+  <delay><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab04\Part C\C.asm</FILE><LINE>45</LINE></delay>
+  <nextcol><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab04\Part C\C.asm</FILE><LINE>67</LINE></nextcol>
+  <rowloop><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab04\Part C\C.asm</FILE><LINE>57</LINE></rowloop>
+  <convert><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab04\Part C\C.asm</FILE><LINE>72</LINE></convert>
+  <letters><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab04\Part C\C.asm</FILE><LINE>127</LINE></letters>
+  <symbols><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab04\Part C\C.asm</FILE><LINE>135</LINE></symbols>
+  <n1><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab04\Part C\C.asm</FILE><LINE>166</LINE></n1>
+  <n2><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab04\Part C\C.asm</FILE><LINE>170</LINE></n2>
+  <n3><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab04\Part C\C.asm</FILE><LINE>172</LINE></n3>
+  <n4><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab04\Part C\C.asm</FILE><LINE>174</LINE></n4>
+  <n5><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab04\Part C\C.asm</FILE><LINE>176</LINE></n5>
+  <n6><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab04\Part C\C.asm</FILE><LINE>178</LINE></n6>
+  <n7><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab04\Part C\C.asm</FILE><LINE>180</LINE></n7>
+  <n8><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab04\Part C\C.asm</FILE><LINE>182</LINE></n8>
+  <n9><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab04\Part C\C.asm</FILE><LINE>184</LINE></n9>
+  <convert_end><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab04\Part C\C.asm</FILE><LINE>186</LINE></convert_end>
+  <A><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab04\Part C\C.asm</FILE><LINE>152</LINE></A>
+  <B><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab04\Part C\C.asm</FILE><LINE>160</LINE></B>
+  <star><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab04\Part C\C.asm</FILE><LINE>142</LINE></star>
+  <zero><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab04\Part C\C.asm</FILE><LINE>147</LINE></zero>
+ </LABELS>
+</ASSEMBLER_INFO>
