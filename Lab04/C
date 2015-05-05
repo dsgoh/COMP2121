@@ -19,7 +19,6 @@
 .def temp2 = r21
 .def currVal = r22		; value at the top of lcd
 .def botVal = r23		; value at the bottom of lcd
-.def symbol = r24		; 0 = no operation, 1 = Addition, 2 = Subtraction
 .def temp = r25	
 
 .equ PORTADIR = 0xF0	; Setting PD7-4 to output and PD3-0 to input
@@ -29,6 +28,12 @@
 .equ F_CPU = 16000000
 .equ DELAY_1MS = F_CPU / 4 / 1000 - 4
 
+.dseg
+SecondCounter:
+	.byte 2
+
+.cseg 
+	jmp RESET
 
 RESET:
 	ldi temp1, low(RAMEND)
@@ -60,11 +65,11 @@ RESET:
 	do_lcd_command 0b00000001 ; clear display
 	do_lcd_command 0b00000110 ; increment, no display shift
 	do_lcd_command 0b00001110 ; Cursor on, bar, no blink
-	
-	clr r0
 
+	do_lcd_command 0b11000000
+	clr r0
 	jmp main
-	
+
 main:
 	ldi cmask, INITCOLMASK	; initial column mask
 	clr col					; initial column
@@ -79,8 +84,8 @@ colloop:
 delay: 
 	dec temp1
 	brne delay
-
-	lds temp1, PINL			; read PORTA
+	
+	lds temp1, PINL			; read PORTL
 	andi temp1, ROWMASK		; Get the keypad output value
 	cpi temp1, 0xF			; check if any row is low
 	breq nextcol			
@@ -103,6 +108,46 @@ nextcol:
 	inc col
 	jmp colloop
 
+//for this program we only handle A and B
+letters:
+	cpi row, 0			; if we have an 'A'
+	breq A
+	cpi row, 1			; if we have a 'B'
+	breq B
+	jmp convert_end		; otherwise we have C or D, but we don't handle it
+
+//for this program we only handle *
+symbols:
+	cpi col, 0			; if we have a star
+	breq star
+	cpi col, 1			; if we have a zero
+	breq zero
+	jmp convert_end		; otherwise we have a hash, let's make hash the decimal number
+	
+star:
+	clr currVal
+	//clear the top lcd screen
+	jmp convert_end
+
+zero:
+	do_lcd_data '0'
+	rcall sleep_debounce
+	jmp convert_end
+
+A:
+	//since it is a, we want to add the new number
+	//to the accumulator
+	//move the number to the top accumulator
+
+	//clear the number on bottom accumulator
+	jmp convert_end
+
+B:
+	//move the number to the top accumulator
+
+	//clear the number on bottom accumulator
+	jmp convert_end
+
 convert:
 	cpi col, 3				; if key is in column 3
 	breq letters			; they are letters
@@ -111,11 +156,11 @@ convert:
 	breq symbols			; they are symbols, so do nothing
 
 	cpi row, 0				; these are the numbers 1-9
-	ldi temp1, 0
+	ldi temp1, 0			; number 1
 	cpc col, temp1
-	breq n1
+	breq n1	
 
-	cpi row, 0
+	cpi row, 0				; number 2
 	ldi temp1, 1
 	cpc col, temp1
 	breq n2
@@ -157,68 +202,54 @@ convert:
 
 	jmp convert_end
 
-//for this program we only handle A and B
-letters:
-	cpi row, 0			; if we have an 'A'
-	breq A
-	cpi row, 1			; if we have a 'B'
-	breq B
-	jmp convert_end		; otherwise we have C or D, but we don't handle it
-
-//for this program we only handle *
-symbols:
-	cpi col, 0			; if we have a star
-	breq star
-	cpi col, 1			; if we have a zero
-	breq zero
-	jmp convert_end		; otherwise we have a hash, let's make hash the decimal number
-
-star:
-	clr currVal
-	//clear the top lcd screen
-	jmp convert_end
-
-zero:
-	//add zero to the bottom value
-	//display it on bottom accumulator
-	jmp main
-
-A:
-	//since it is a, we want to add the new number
-	//to the accumulator
-	//move the number to the top accumulator
-
-	//clear the number on bottom accumulator
-	jmp convert_end
-
-B:
-	//move the number to the top accumulator
-
-	//clear the number on bottom accumulator
-	jmp convert_end
-
 n1:
 	//add the number 1 to the bottom value
 	//display it on bottom accumulator
-	;do_lcd_command 0b11000000		; forces cursor to the next line
 	do_lcd_data '1'
+	rcall sleep_100ms
+	rcall sleep_100ms
+	rcall sleep_20ms
 	jmp convert_end
 
 n2:
+	do_lcd_data '2'
+	rcall sleep_debounce
+	jmp convert_end
 
 n3:
+	do_lcd_data '3'
+	rcall sleep_debounce
+	jmp convert_end
 
 n4:
+	do_lcd_data '4'
+	rcall sleep_debounce
+	jmp convert_end
 
 n5:
+	do_lcd_data '5'
+	rcall sleep_debounce
+	jmp convert_end
 
 n6:
+	do_lcd_data '6'
+	rcall sleep_debounce
+	jmp convert_end
 
 n7:
+	do_lcd_data '7'
+	rcall sleep_debounce
+	jmp convert_end
 
 n8:
+	do_lcd_data '8'
+	rcall sleep_debounce
+	jmp convert_end
 
 n9:
+	do_lcd_data '9'
+	rcall sleep_debounce
+	jmp convert_end
 
 convert_end:
 	jmp main
@@ -239,7 +270,6 @@ convert_end:
 ;
 ; Send a command to the LCD (temp)
 ;
-
 lcd_command:
 	out PORTF, temp
 	rcall sleep_1ms
@@ -299,4 +329,25 @@ sleep_5ms:
 	rcall sleep_1ms
 	rcall sleep_1ms
 	rcall sleep_1ms
+	ret
+
+sleep_20ms:
+	rcall sleep_5ms
+	rcall sleep_5ms
+	rcall sleep_5ms
+	rcall sleep_5ms
+	ret
+
+sleep_100ms:
+	rcall sleep_20ms
+	rcall sleep_20ms
+	rcall sleep_20ms
+	rcall sleep_20ms
+	rcall sleep_20ms
+	ret
+
+sleep_debounce:
+	rcall sleep_100ms
+	rcall sleep_100ms
+	rcall sleep_20ms
 	ret
