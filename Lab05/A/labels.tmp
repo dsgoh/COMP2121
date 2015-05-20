@@ -1,0 +1,55 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.1.42</VERSION>
+ <DEVICE>ATmega2560</DEVICE>
+ <WORKING_DIR>C:\Users\angusyuen\Documents\COMP2121\Lab05</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:\Program Files (x86)\Atmel\AVR Tools\AvrAssembler2\Appnotes</DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\A.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:\Program Files (x86)\Atmel\AVR Tools\AvrAssembler2\Appnotes\m2560def.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\A.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\A.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\A.map</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <MilliCounter><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\A.asm</FILE><LINE>5</LINE></MilliCounter>
+  <FiveHundredCounter><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\A.asm</FILE><LINE>8</LINE></FiveHundredCounter>
+  <TwoFiftyCounter><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\A.asm</FILE><LINE>11</LINE></TwoFiftyCounter>
+  <RESET><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\A.asm</FILE><LINE>186</LINE></RESET>
+  <EXT_INT2><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\A.asm</FILE><LINE>170</LINE></EXT_INT2>
+  <Timer5OVF><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\A.asm</FILE><LINE>70</LINE></Timer5OVF>
+  <NotSecond><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\A.asm</FILE><LINE>102</LINE></NotSecond>
+  <finish><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\A.asm</FILE><LINE>92</LINE></finish>
+  <check500Milli><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\A.asm</FILE><LINE>106</LINE></check500Milli>
+  <Not500Milli><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\A.asm</FILE><LINE>157</LINE></Not500Milli>
+  <lcd_command><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\A.asm</FILE><LINE>312</LINE></lcd_command>
+  <lcd_wait><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\A.asm</FILE><LINE>330</LINE></lcd_wait>
+  <BINARYtoBCD><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\A.asm</FILE><LINE>246</LINE></BINARYtoBCD>
+  <printDigit3><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\A.asm</FILE><LINE>126</LINE></printDigit3>
+  <lcd_data><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\A.asm</FILE><LINE>320</LINE></lcd_data>
+  <printDigit2><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\A.asm</FILE><LINE>137</LINE></printDigit2>
+  <printDigit1><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\A.asm</FILE><LINE>147</LINE></printDigit1>
+  <EndIf><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\A.asm</FILE><LINE>161</LINE></EndIf>
+  <isDebounced2><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\A.asm</FILE><LINE>175</LINE></isDebounced2>
+  <loop><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\A.asm</FILE><LINE>243</LINE></loop>
+  <addThrees><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\A.asm</FILE><LINE>253</LINE></addThrees>
+  <skipFixD1><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\A.asm</FILE><LINE>260</LINE></skipFixD1>
+  <skipFixD2><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\A.asm</FILE><LINE>264</LINE></skipFixD2>
+  <skipFixD3><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\A.asm</FILE><LINE>268</LINE></skipFixD3>
+  <leftShift><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\A.asm</FILE><LINE>274</LINE></leftShift>
+  <sleep_1ms><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\A.asm</FILE><LINE>352</LINE></sleep_1ms>
+  <lcd_wait_loop><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\A.asm</FILE><LINE>336</LINE></lcd_wait_loop>
+  <delayloop_1ms><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\A.asm</FILE><LINE>357</LINE></delayloop_1ms>
+  <sleep_5ms><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\A.asm</FILE><LINE>363</LINE></sleep_5ms>
+  <sleep_20ms><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\A.asm</FILE><LINE>370</LINE></sleep_20ms>
+  <sleep_100ms><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\A.asm</FILE><LINE>376</LINE></sleep_100ms>
+  <sleep_220ms><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\A.asm</FILE><LINE>383</LINE></sleep_220ms>
+ </LABELS>
+</ASSEMBLER_INFO>
