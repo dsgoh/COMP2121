@@ -1,0 +1,27 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.1.42</VERSION>
+ <DEVICE>ATmega2560</DEVICE>
+ <WORKING_DIR>C:\Users\angusyuen\Documents\COMP2121\Lab05\B</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:\Program Files (x86)\Atmel\AVR Tools\AvrAssembler2\Appnotes</DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\B\B.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:\Program Files (x86)\Atmel\AVR Tools\AvrAssembler2\Appnotes\m2560def.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\B\B.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\B\B.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\B\B.map</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <RESET><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\B\B.asm</FILE><LINE>48</LINE></RESET>
+  <Timer5OVF><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\B\B.asm</FILE><LINE>23</LINE></Timer5OVF>
+  <EndIf><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\B\B.asm</FILE><LINE>38</LINE></EndIf>
+  <loop><FILE>C:\Users\angusyuen\Documents\COMP2121\Lab05\B\B.asm</FILE><LINE>76</LINE></loop>
+ </LABELS>
+</ASSEMBLER_INFO>
